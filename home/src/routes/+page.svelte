@@ -1,2 +1,16 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+import SideBar from '../components/SideBar.svelte';
+</script>
+<div class="flex">
+<div class="flex-none basis-1/6">
+<SideBar/>
+</div>
+<div class="">
+</div>
+</div>
+
+<style lang="postcss">
+  :global(html) {
+    background-color: theme(colors.gray.100);
+  }
+</style>

@@ -22,9 +22,11 @@ const config = {
           strict: true
         }),
         paths: {
-            base: dev ? '' : '/home'
+            base: dev ? '' : ''
         }
-}
+    },
+    preprocess: vitePreprocess()
+
 };
 
 export default config;
