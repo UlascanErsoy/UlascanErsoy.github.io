@@ -6,7 +6,7 @@
  let github_data = {};
  let stuff_links = [
     {text:"Home",href:"/"},
-    {text:"Hanzi Practice",href:"/hanzi"}
+    {text:"Hanzi Practice",href:"https://UlascanErsoy.github.io/hanzi"}
  ];
  onMount(async () => {
 
