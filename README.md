@@ -1,4 +1,4 @@
-# Astro Starter Kit: Blog
+# GitHub Pages Page 
 
 ```sh
 npm create astro@latest -- --template blog
