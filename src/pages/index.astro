@@ -4,7 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { Image } from 'astro:assets';
-import profile_pic from './public/homepage.jpg';
+import homepage from '../../public/homepage.jpg';
 ---
 
 <!doctype html>
@@ -15,8 +15,7 @@ import profile_pic from './public/homepage.jpg';
 	<body>
 		<Header />
 		<main>
-            
-            <Image alt="profile picture" class="rounded-lg mt-4" src={profile_pic}/>
+            <Image alt="profile picture" class="rounded-lg mt-4" src={homepage}/>
 		</main>
 		<Footer />
 	</body>
