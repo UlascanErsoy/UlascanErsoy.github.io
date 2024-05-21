@@ -7,6 +7,6 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://ulascanersoy.github.io',
-  base: 'UlascanErsoy.github.io',
+//  base: 'UlascanErsoy.github.io',
   integrations: [mdx(), sitemap(), tailwind()]
 });
