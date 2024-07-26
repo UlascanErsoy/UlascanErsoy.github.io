@@ -5,6 +5,70 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { Image } from 'astro:assets';
 import homepage from '../../public/homepage.jpg';
+
+const welcomeMessages = [
+  "欢迎",
+  "Bienvenido",
+  "Welcome",
+  "ようこそ",
+  "స్వాగతం",
+  "Hoş geldiniz",
+  "환영합니다",
+  "Bienvenue",
+  "Willkommen",
+  "Chào mừng",
+];
+
+const pretentiousQuotes = [
+  ["In the symphony of success, only the virtuosos of vision can conduct the orchestra of opportunity.", "ChatGPT"],
+  ["Scaling the zenith of ambition requires not just a ladder but an escalator powered by relentless audacity.", "ChatGPT"],
+  ["The alchemy of achievement turns the lead of lethargy into the gold of greatness with the philosopher's stone of persistence.", "ChatGPT"],
+  ["To navigate the labyrinth of legacy, one must wield the compass of conviction and the map of magnificence.", "ChatGPT"],
+  ["In the garden of greatness, the seeds of serendipity bloom best when watered with the tears of tenacity.", "ChatGPT"],
+  ["Dreams are the currency of the future, and only those with the deepest pockets of determination can afford the luxury of success.", "ChatGPT"],
+  ["The constellations of accomplishment are charted in the night sky of ambition, visible only to those who dare to telescope their potential.", "ChatGPT"],
+  ["The tapestry of triumph is woven with the threads of thought leadership and the loom of limitless potential.", "ChatGPT"],
+  ["The lighthouse of leadership shines brightest in the stormy seas of stagnation, guiding ships of innovation to the shores of success.", "ChatGPT"],
+  ["Success is the artisanal craft of chiseling away the marble of mediocrity to reveal the statue of significance.", "ChatGPT"],
+  ["Only the architects of aspiration can blueprint the skyscraper of success in the cityscape of the soul.", "ChatGPT"],
+  ["In the game of greatness, those who play the chess of challenges with the strategy of strength always checkmate mediocrity.", "ChatGPT"],
+  ["The odyssey of opportunity is navigated by the compass of creativity and the sails of self-belief.", "ChatGPT"],
+  ["To ascend the summit of significance, one must first traverse the valley of vagueness with the hiking boots of hard work.", "ChatGPT"],
+  ["The diamond of destiny is cut from the rough stone of struggle, polished by the wheel of wisdom.", "ChatGPT"],
+  ["The galaxy of greatness is explored by the astronauts of ambition in the spacecraft of self-discovery.", "ChatGPT"],
+  ["In the theater of triumph, only the protagonists of perseverance can perform the soliloquy of success.", "ChatGPT"],
+  ["The epic poem of prosperity is penned with the ink of inspiration and the quill of quality.", "ChatGPT"],
+  ["The grand tapestry of triumph is woven on the loom of leadership with the threads of thought and action.", "ChatGPT"],
+  ["Success is the haute couture of hard work, tailored by the seamstress of steadfastness and adorned with the jewels of joy.", "ChatGPT"]
+  ["Strive for mediocrity; it's the exceptional that's overrated.", "Gemini"],
+  ["Embrace your inner sloth; productivity is for the unimaginative.", "Gemini"],
+  ["Network strategically by only connecting with those less successful than you.", "Gemini"],
+  ["Never underestimate the power of procrastination; deadlines are for the uninspired.", "Gemini"],
+  ["Think outside the box by staying comfortably inside your comfort zone.", "Gemini"],
+  ["The early bird may get the worm, but the night owl gets the caviar.", "Gemini"],
+  ["Dress for the job you don't want, so you'll never get it.", "Gemini"],
+  ["Confidence is key; even when you're clueless, act like you know it all.", "Gemini"],
+  ["The only constant in life is change, so resist it with all your might.", "Gemini"],
+  ["Dream big, but never actually do anything to achieve those dreams.", "Gemini"],
+  ["Work smarter, not harder, by delegating all your tasks to others.", "Gemini"],
+  ["Success is a journey, not a destination, so take the scenic route and get lost.", "Gemini"],
+  ["Don't be afraid to fail; it's proof that you're trying to do something you're not good at.", "Gemini"],
+  ["Embrace your inner critic; they're the only ones who truly understand your shortcomings.", "Gemini"],
+  ["Celebrate your mistakes; they're the stepping stones to mediocrity.", "Gemini"],
+  ["Networking is overrated; true connections happen when you least expect them, preferably in a bar.", "Gemini"],
+  ["Never settle for less than you deserve, unless it's easier and requires less effort.", "Gemini"],
+  ["Your personal brand is everything, so make sure it's a carefully curated illusion.", "Gemini"],
+  ["Don't chase your passions; let them come to you while you binge-watch Netflix.", "Gemini"],
+  ["The key to happiness is low expectations; aim for the bare minimum and you'll never be disappointed.", "Gemini"],
+];
+
+function getRandomElement(arr) {
+  const randomIndex = Math.floor(Math.random() * arr.length);
+  return arr[randomIndex];
+}
+
+const welcomeMessage = getRandomElement(welcomeMessages);
+const [quote, author] = getRandomElement(pretentiousQuotes);
 ---
 
 <!doctype html>
@@ -15,6 +79,16 @@ import homepage from '../../public/homepage.jpg';
 	<body>
 		<Header />
 		<main>
+            <div class="text-center">
+            <blockquote>
+            "{quote}"
+            <cite><p>—{author}</p></cite>
+            </blockquote>
+            <h3>Links</h3>
+            <ul class="list-none">
+              <li><a href="easy-anki-word-flashcards/">Anki FlashCard Maker<a/></li>
+            </ul>
+            </div>
             <Image alt="profile picture" class="rounded-lg mt-4" src={homepage}/>
 		</main>
 		<Footer />
