@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { Image } from 'astro:assets';
 import homepage from '../../public/homepage.jpg';
+import RandomQuote from '../components/QuoteRandom.jsx';
 
 const welcomeMessages = [
   "欢迎",
@@ -62,13 +63,6 @@ const pretentiousQuotes = [
   ["The key to happiness is low expectations; aim for the bare minimum and you'll never be disappointed.", "Gemini"],
 ];
 
-function getRandomElement(arr) {
-  const randomIndex = Math.floor(Math.random() * arr.length);
-  return arr[randomIndex];
-}
-
-const welcomeMessage = getRandomElement(welcomeMessages);
-const [quote, author] = getRandomElement(pretentiousQuotes);
 ---
 
 <!doctype html>
@@ -80,10 +74,7 @@ const [quote, author] = getRandomElement(pretentiousQuotes);
 		<Header />
 		<main>
             <div class="text-center">
-            <blockquote>
-            "{quote}"
-            <cite><p>—{author}</p></cite>
-            </blockquote>
+            <RandomQuote messages={pretentiousQuotes}/>
             <h3>Links</h3>
             <ul class="list-none">
               <li><a href="easy-anki-word-flashcards/">Anki FlashCard Maker<a/></li>
